@@ -6,4 +6,10 @@ RSpec.describe Team do
 
     expect(team).to be_a Team
   end
+
+  it 'has an empty roster by default' do
+    team = Team.new("Dodgers", "Los Angeles")
+
+    expect(team.roster).to eq([])
+  end
 end

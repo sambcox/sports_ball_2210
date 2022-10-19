@@ -1,7 +1,8 @@
 class Team
-  attr_reader :location, :team_name
+  attr_reader :location, :team_name, :roster
   def initialize(location, team_name)
     @location = location
     @team_name = team_name
+    @roster = []
   end
 end
