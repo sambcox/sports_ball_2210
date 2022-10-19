@@ -85,7 +85,7 @@ RSpec.describe Team do
     team.add_player(player_3)
     team.add_player(player_4)
   
-    expect(team.average_cost_of_player).to eq(93812475)
+    expect(team.average_cost_of_player).to eq("$93,812,475")
   end
 
   it 'can return the last names of all players in alphabetical order' do
@@ -99,6 +99,6 @@ RSpec.describe Team do
     team.add_player(player_3)
     team.add_player(player_4)
   
-    expect(team.players_by_last_name).to eq(["Betts", "Buehler", "Kershaw", "Turner"])
+    expect(team.players_by_last_name).to eq("Betts, Buehler, Kershaw, Turner")
   end
 end

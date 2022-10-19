@@ -34,20 +34,19 @@ class Team
   
   def details
     details = {
-      "total_value" => self.total_value,
-      "player_count" => self.player_count
+      "total_value" => total_value,
+      "player_count" => player_count
     }
   end
 
   def average_cost_of_player
-    total_value / player_count
+    average = total_value / player_count
+    "$#{average.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse}"
   end
 
   def players_by_last_name
-    last_names = []
-    roster.each do |player|
-      last_names << player.last_name
-    end
-    last_names.sort
+    roster.map do |player|
+      player.last_name
+    end.sort.join(", ")
   end
 end
