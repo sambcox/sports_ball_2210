@@ -45,4 +45,18 @@ RSpec.describe Team do
     expect(team.long_term_players).to eq([player_2])
     expect(team.short_term_players).to eq([player_1, player_3, player_4])
   end
+
+  it 'can tell the total team value' do
+    team = Team.new("Dodgers", "Los Angeles")
+    player_1 = Player.new("Clayton Kershaw" , 1416666, 12)
+    player_2 = Player.new("Mookie Betts" , 2386363, 132)
+    player_3 = Player.new("Justin Turner", 1500000, 24)
+    player_4 = Player.new("Walker Buehler", 604166, 12)
+    team.add_player(player_1)
+    team.add_player(player_2)
+    team.add_player(player_3)
+    team.add_player(player_4)
+  
+    expect(team.total_value).to eq(375249900)
+  end
 end
