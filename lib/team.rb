@@ -42,4 +42,12 @@ class Team
   def average_cost_of_player
     total_value / player_count
   end
+
+  def players_by_last_name
+    last_names = []
+    roster.each do |player|
+      last_names << player.last_name
+    end
+    last_names.sort
+  end
 end
