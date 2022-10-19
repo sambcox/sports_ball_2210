@@ -23,12 +23,24 @@ RSpec.describe Team do
     team = Team.new("Dodgers", "Los Angeles")
     player_1 = Player.new("Clayton Kershaw" , 1416666, 12)
     player_2 = Player.new("Mookie Betts" , 2386363, 132)
-
     team.add_player(player_1)
     team.add_player(player_2)
 
     expect(team.roster).to eq([player_1, player_2])
     
     expect(team.player_count).to eq(2)
+  end
+
+  it 'can tell if a player is short or long term' do
+    team = Team.new("Dodgers", "Los Angeles")
+    player_1 = Player.new("Clayton Kershaw" , 1416666, 12)
+    player_2 = Player.new("Mookie Betts" , 2386363, 132)
+    player_3 = Player.new("Justin Turner", 1500000, 24)
+    player_4 = Player.new("Walker Buehler", 604166, 12)
+    team.add_player(player_1)
+    team.add_player(player_2)
+
+    expect(team.long_term_players).to eq([player_2])
+    expect(team.short_term_players).to eq([player_1, player_3, player_4])
   end
 end
