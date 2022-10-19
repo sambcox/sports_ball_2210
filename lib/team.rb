@@ -27,10 +27,15 @@ class Team
   end
 
   def total_value
-    total_value = 0
-    roster.each do |player|
-      total_value += player.total_cost
+    roster.sum do |player|
+      player.total_cost
     end
-    total_value
+  end
+  
+  def details
+    details = {
+      "total_value" => self.total_value,
+      "player_count" => self.player_count
+    }
   end
 end
