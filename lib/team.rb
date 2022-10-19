@@ -38,4 +38,8 @@ class Team
       "player_count" => self.player_count
     }
   end
+
+  def average_cost_of_player
+    total_value / player_count
+  end
 end
