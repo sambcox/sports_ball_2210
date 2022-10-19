@@ -13,4 +13,16 @@ class Team
   def add_player(player_added)
     @roster << player_added
   end
+
+  def long_term_players
+    roster.find_all do |player|
+      player.contract_length > 24
+    end
+  end
+
+  def short_term_players
+    roster.find_all do |player|
+      player.contract_length <= 24
+    end
+  end
 end

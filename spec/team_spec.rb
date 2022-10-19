@@ -39,6 +39,8 @@ RSpec.describe Team do
     player_4 = Player.new("Walker Buehler", 604166, 12)
     team.add_player(player_1)
     team.add_player(player_2)
+    team.add_player(player_3)
+    team.add_player(player_4)
 
     expect(team.long_term_players).to eq([player_2])
     expect(team.short_term_players).to eq([player_1, player_3, player_4])
